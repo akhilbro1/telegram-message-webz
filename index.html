@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telegram Message Sender</title>
+</head>
+<body>
+  <h2>Send Message to Telegram</h2>
+  <button onclick="sendMessage()">Send Message</button>
+
+  <script>
+    function sendMessage() {
+      const url = "https://api.telegram.org/bot7379816167:AAEVlzqsdn0Feklwburw5Ra4XQwfsAjdtVQ/sendMessage?chat_id=7992098739&text=NEW MESSAGE ~CHATr";
+      
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          alert("Message sent!");
+          console.log(data);
+        })
+        .catch(error => {
+          alert("Error sending message.");
+          console.error(error);
+        });
+    }
+  </script>
+</body>
+</html>
